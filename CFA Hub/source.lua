@@ -141,16 +141,16 @@ function CFAHub:CreateWindow(title, gameName, intro)
     end
 
     local themes = {
-        SchemaColor = Color3.fromRGB(79, 195, 247),
-        TextColor = Color3.fromRGB(255, 255, 255),
-        Header = Color3.fromRGB(22, 22, 22),
-        Container = Color3.fromRGB(34, 34, 34),
-        Background = Color3.fromRGB(22, 22, 22),
-        Slider = Color3.fromRGB(15, 15, 15),
-        Drop = Color3.fromRGB(28, 28, 28),
-        ScrollBar = Color3.fromRGB(149, 149, 149),
-        NotiBackground = Color3.fromRGB(0, 0, 0),
-        Glow = Color3.fromRGB(79, 195, 247),
+       SchemaColor = Color3.fromRGB(79, 195, 247),
+       TextColor = Color3.fromRGB(255, 255, 255),
+       Header = Color3.fromRGB(10, 10, 10),
+       Container = Color3.fromRGB(0, 0, 0),
+       Background = Color3.fromRGB(15, 15, 15),
+       Slider = Color3.fromRGB(20, 20, 20),
+       Drop = Color3.fromRGB(25, 25, 25),
+       ScrollBar = Color3.fromRGB(60, 60, 60),
+       NotiBackground = Color3.fromRGB(0, 0, 0),
+Glow = Color3.fromRGB(79, 195, 247),
         Logo = "rbxassetid://7409401226"
     }
 
@@ -228,7 +228,8 @@ function CFAHub:CreateWindow(title, gameName, intro)
     CurrentAlert.Position = UDim2.new(1, -10, 1, -10)
     CurrentAlert.Size = UDim2.new(1, -10, 1, -10)
     CurrentAlert.ZIndex = 9
-
+    CurrentAlert.Active = true
+    CurrentAlert.Draggable = true
     function CFAHub:AddNoti(header, message, duration, buttonEnable, callback)
         header = header or "Announcement"
         message = message or "Nil"
@@ -2271,3 +2272,10 @@ function CFAHub:CreateWindow(title, gameName, intro)
 end
 
 return CFAHub
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thanks for using VoxLibrary";
+    Text = "Discord: voxnq";
+    Duration = 5;
+    Icon = "rbxassetid://7733960981";
+})
